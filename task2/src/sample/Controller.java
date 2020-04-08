@@ -24,15 +24,15 @@ public class Controller {
         btn.setOnMouseClicked((event -> {
             String[] s = textField.getText().split(" ");
             MyLinkedList<String> linkedList = new MyLinkedList<>();
-            for(String item:s) {
+            for (String item : s) {
                 linkedList.addLast(item);
             }
             linkedList = linkedList.process();
             StringBuilder textStr = new StringBuilder();
-            for(int i = 0; i < linkedList.size(); i++) {
+            for (int i = 0; i < linkedList.size(); i++) {
                 try {
                     textStr.append(linkedList.getValue(i));
-                    if(i != linkedList.size()-1)
+                    if (i != linkedList.size() - 1)
                         textStr.append(", ");
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -108,7 +108,7 @@ public class MyLinkedList<T> {
     }
 
     public void fillNulls(int size) {
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             this.addFirst(null);
         }
     }
@@ -116,9 +116,9 @@ public class MyLinkedList<T> {
     public MyLinkedList<T> shake() {
         MyLinkedList<T> ans = new MyLinkedList<>();
 
-        if(size != 0) {
+        if (size != 0) {
             ans.fillNulls(size);
-            for(int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
                 int index;
                 try {
                     do {

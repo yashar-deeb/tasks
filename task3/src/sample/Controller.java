@@ -90,7 +90,7 @@ public class Controller {
     }
 
     private void appendToStringFromStack(MyStack stack, StringBuilder string) throws Exception {
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             string.append(stack.pop().toString());
             if (!stack.isEmpty()) {
                 string.append(", ");

@@ -120,14 +120,14 @@ public class MyLinkedList<T> {
 
     public MyLinkedList<T> process() {
         MyLinkedList<T> ans = new MyLinkedList<>();
-        if(this.size % 3 != 0) {
+        if (this.size % 3 != 0) {
             System.out.println("Array size is not equal to 3*n");
             return ans;
         }
 
         int n = this.size / 3;
-        int first = 0, second = n, third = 2*n;
-        for(int i = 0; i < n; i++) {
+        int first = 0, second = n, third = 2 * n;
+        for (int i = 0; i < n; i++) {
             try {
                 ans.addLast(this.get(first).value);
                 ans.addLast(this.get(second).value);

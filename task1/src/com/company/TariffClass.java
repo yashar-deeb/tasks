@@ -36,14 +36,14 @@ public class TariffClass {
         int indexOfLongestPrefix = findIndexOfLongestPrefix(number);
 
         int durationInMinute = (durationInSeconds / 60);
-        if(durationInSeconds / 60 < 1) {
-            if(!(durationInSeconds % 60 < 6)) durationInMinute++;
+        if (durationInSeconds / 60 < 1) {
+            if (!(durationInSeconds % 60 < 6)) durationInMinute++;
         } else {
-            if(durationInSeconds % 60 > 0) durationInMinute++;
+            if (durationInSeconds % 60 > 0) durationInMinute++;
         }
 
         try {
-        cost = durationInMinute * ManagerDirectionItem.getPricePerMinute(manager.getItem(indexOfLongestPrefix));
+            cost = durationInMinute * ManagerDirectionItem.getPricePerMinute(manager.getItem(indexOfLongestPrefix));
         } catch (IndexOutOfBoundsException e) {
             System.out.println("There is no prefix code suitable for this number");
         }

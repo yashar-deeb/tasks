@@ -10,8 +10,8 @@ public class CsvFileOutput {
     static public void saveTariffToFile(TariffClass tariff, String nameOfCsvFile) {
         ManagerListDirectionItem manager = tariff.getManager();
 
-        try(FileWriter output = new FileWriter(nameOfCsvFile, false)) {
-            for(int i = 0; i < manager.getSize(); i++) {
+        try (FileWriter output = new FileWriter(nameOfCsvFile, false)) {
+            for (int i = 0; i < manager.getSize(); i++) {
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append(ManagerDirectionItem.getPrefix(manager.getItem(i)));
                 stringBuilder.append(",");
@@ -23,8 +23,7 @@ public class CsvFileOutput {
                 output.append('\n');
             }
             output.flush();
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             System.err.println("Invalid Path");
         }
     }

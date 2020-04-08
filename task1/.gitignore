@@ -1,3 +1,3 @@
-/out
-/.idea
-task1.iml
+out/
+.idea/
+*task1.iml

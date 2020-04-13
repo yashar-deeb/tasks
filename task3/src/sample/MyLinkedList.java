@@ -1,7 +1,5 @@
 package sample;
 
-import java.util.Random;
-
 public class MyLinkedList<T> {
 
     private class ListItem {
@@ -63,15 +61,6 @@ public class MyLinkedList<T> {
             curr = curr.next;
         }
         return curr;
-        /*
-        for (ListItem curr = head; curr != null; curr = curr.next) {
-            if (index == 0) {
-                return curr.value;
-            }
-            index--;
-        }
-        return null;
-        */
     }
 
     public T getValue(int index) throws Exception {
@@ -105,32 +94,5 @@ public class MyLinkedList<T> {
             }
         }
         size--;
-    }
-
-    public void fillNulls(int size) {
-        for (int i = 0; i < size; i++) {
-            this.addFirst(null);
-        }
-    }
-
-    public MyLinkedList<T> shake() {
-        MyLinkedList<T> ans = new MyLinkedList<>();
-
-        if (size != 0) {
-            ans.fillNulls(size);
-            for (int i = 0; i < size; i++) {
-                int index;
-                try {
-                    do {
-                        index = (new Random().nextInt(size));
-                    } while (ans.get(index).value != null);
-                    ans.get(index).value = this.get(i).value;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return ans;
     }
 }

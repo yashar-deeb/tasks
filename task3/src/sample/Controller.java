@@ -6,12 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
@@ -41,13 +37,16 @@ public class Controller {
         btn.setOnMouseClicked((event -> {
             MyStack<String> stack = new MyStack<>();
             String[] s = textField.getText().split(" ");
+
             for (String value : s) {
                 stack.push(value);
             }
+
             StringBuilder stringBuilder1 = new StringBuilder();
             stringBuilder1.append("Orig stack ");
             StringBuilder stringBuilder2 = new StringBuilder();
             stringBuilder2.append("Reversed stack ");
+
             try {
                 MyStack ans = stack.getReversedStack();
                 appendToStringFromStack(stack, stringBuilder1);
@@ -55,6 +54,7 @@ public class Controller {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             text1.setText(stringBuilder1.toString());
             text2.setText(stringBuilder2.toString());
         }));
@@ -62,10 +62,9 @@ public class Controller {
         setFileBtn.setOnMouseClicked((event -> {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Choose Document");
-            FileChooser.ExtensionFilter extFilter =
-                    new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");//Расширение
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
             fileChooser.getExtensionFilters().add(extFilter);
-            File file = fileChooser.showOpenDialog(stage);//Указываем текущую сцену
+            File file = fileChooser.showOpenDialog(stage);
 
             if (file != null) {
                 setTextField(file.getPath());
@@ -75,6 +74,7 @@ public class Controller {
 
     private void setTextField(String inputPath) {
         StringBuilder stringBuilder = new StringBuilder();
+
         try (Scanner input = new Scanner(new File(inputPath))) {
             while (input.hasNextLine()) {
                 String[] str = input.nextLine().split(" ");
@@ -86,12 +86,14 @@ public class Controller {
         } catch (IOException ex) {
             System.err.println("Invalid Path");
         }
+
         textField.setText(stringBuilder.toString().trim());
     }
 
     private void appendToStringFromStack(MyStack stack, StringBuilder string) throws Exception {
         while (!stack.isEmpty()) {
             string.append(stack.pop().toString());
+
             if (!stack.isEmpty()) {
                 string.append(", ");
             }

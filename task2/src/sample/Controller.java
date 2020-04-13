@@ -5,10 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Controller {
 
     @FXML
@@ -24,11 +20,14 @@ public class Controller {
         btn.setOnMouseClicked((event -> {
             String[] s = textField.getText().split(" ");
             MyLinkedList<String> linkedList = new MyLinkedList<>();
+
             for (String item : s) {
                 linkedList.addLast(item);
             }
+
             linkedList = linkedList.process();
             StringBuilder textStr = new StringBuilder();
+
             for (int i = 0; i < linkedList.size(); i++) {
                 try {
                     textStr.append(linkedList.getValue(i));
@@ -38,6 +37,7 @@ public class Controller {
                     e.printStackTrace();
                 }
             }
+
             text.setText(textStr.toString());
         }));
     }

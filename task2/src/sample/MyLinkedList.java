@@ -1,6 +1,5 @@
 package sample;
 
-
 public class MyLinkedList<T> {
 
     private class ListItem {
@@ -27,7 +26,6 @@ public class MyLinkedList<T> {
 
     public MyLinkedList() {
     }
-
 
     public void addFirst(T value) {
         head = new ListItem(value, head);
@@ -74,15 +72,6 @@ public class MyLinkedList<T> {
             curr = curr.next;
         }
         return curr;
-        /*
-        for (ListItem curr = head; curr != null; curr = curr.next) {
-            if (index == 0) {
-                return curr.value;
-            }
-            index--;
-        }
-        return null;
-        */
     }
 
     public T getValue(int index) throws Exception {
@@ -139,7 +128,6 @@ public class MyLinkedList<T> {
             second++;
             third++;
         }
-
         return ans;
     }
 }

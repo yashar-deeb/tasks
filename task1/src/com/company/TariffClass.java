@@ -18,7 +18,7 @@ public class TariffClass {
 
         for (int i = 0; i < manager.getSize(); i++) {
             StringBuilder regex = new StringBuilder();
-            String prefix = ManagerDirectionItem.getPrefix(manager.getItem(i));
+            String prefix = manager.getItem(i).getPrefix();
             regex.append("^");
             regex.append(prefix);
             regex.append(".+");
@@ -43,7 +43,7 @@ public class TariffClass {
         }
 
         try {
-            cost = durationInMinute * ManagerDirectionItem.getPricePerMinute(manager.getItem(indexOfLongestPrefix));
+            cost = durationInMinute * manager.getItem(indexOfLongestPrefix).getPricePerMinute();
         } catch (IndexOutOfBoundsException e) {
             System.out.println("There is no prefix code suitable for this number");
         }

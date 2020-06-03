@@ -13,11 +13,11 @@ public class CsvFileOutput {
         try (FileWriter output = new FileWriter(nameOfCsvFile, false)) {
             for (int i = 0; i < manager.getSize(); i++) {
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.append(ManagerDirectionItem.getPrefix(manager.getItem(i)));
+                stringBuilder.append(manager.getItem(i).getPrefix());
                 stringBuilder.append(",");
-                stringBuilder.append(ManagerDirectionItem.getNameOfDirection(manager.getItem(i)));
+                stringBuilder.append(manager.getItem(i).getNameOfDirection());
                 stringBuilder.append(",");
-                stringBuilder.append(ManagerDirectionItem.getPricePerMinute(manager.getItem(i)));
+                stringBuilder.append(manager.getItem(i).getPricePerMinute());
                 stringBuilder.append(",");
                 output.write(stringBuilder.toString());
                 output.append('\n');

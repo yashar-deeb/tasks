@@ -10,4 +10,28 @@ public class DirectionItem {
         this.nameOfDirection = nameOfDirection;
         this.pricePerMinute = pricePerMinute;
     }
+
+    public void setPrefix(DirectionItem item, String newPrefix) {
+        item.prefix = newPrefix;
+    }
+
+    public void setNameOfDirection(String nameOfDirection) {
+        this.nameOfDirection = nameOfDirection;
+    }
+
+    public void setPricePerMinute(double pricePerMinute) {
+        this.pricePerMinute = pricePerMinute;
+    }
+
+    public String getPrefix() {
+        return this.prefix;
+    }
+
+    public String getNameOfDirection() {
+        return this.nameOfDirection;
+    }
+
+    public double getPricePerMinute() {
+        return this.pricePerMinute;
+    }
 }

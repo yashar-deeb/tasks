@@ -152,6 +152,9 @@ public class BinaryTree<T> implements DefaultBinaryTree<T> {
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+
         class Pair {
             T value;
             int level;
@@ -163,6 +166,8 @@ public class BinaryTree<T> implements DefaultBinaryTree<T> {
 
             @Override
             public boolean equals(Object obj) {
+                if (this == obj) return true;
+                if (obj == null) return false;
                 Pair other = (Pair) obj;
                 return (value == other.value && level == other.level);
             }

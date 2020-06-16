@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Objects;
 import java.util.Stack;
 import java.util.function.Function;
 
@@ -152,6 +153,7 @@ public class BinaryTree<T> implements DefaultBinaryTree<T> {
 
     @Override
     public boolean equals(Object obj) {
+        if (!(obj instanceof BinaryTree)) return false;
         if (this == obj) return true;
         if (obj == null) return false;
 
@@ -166,6 +168,7 @@ public class BinaryTree<T> implements DefaultBinaryTree<T> {
 
             @Override
             public boolean equals(Object obj) {
+                if (!(Pair.class.isInstance(obj))) return false;
                 if (this == obj) return true;
                 if (obj == null) return false;
                 Pair other = (Pair) obj;
